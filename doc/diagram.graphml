@@ -18,7 +18,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.0" width="230.0" x="371.5" y="-16.0"/>
+          <y:Geometry height="133.0" width="230.0" x="266.0" y="-21.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="69.7109375" x="80.14453125" y="3.0">Aplcacao<y:LabelModel>
@@ -43,7 +43,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="86.0" width="139.0" x="290.5" y="178.0"/>
+          <y:Geometry height="86.0" width="139.0" x="80.5" y="137.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="87.4716796875" x="25.76416015625" y="3.0">Codificador<y:LabelModel>
@@ -64,7 +64,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="86.0" width="158.0" x="500.5" y="178.0"/>
+          <y:Geometry height="86.0" width="158.0" x="521.0" y="137.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="105.2451171875" x="26.37744140625" y="3.0">Decodificador<y:LabelModel>
@@ -85,7 +85,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="86.0" width="163.0" x="290.5" y="369.0"/>
+          <y:Geometry height="152.0" width="163.0" x="145.5" y="287.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="59.84033203125" x="51.579833984375" y="3.0">Golomb<y:LabelModel>
@@ -97,7 +97,10 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>- _buffer : vector&lt;char&gt;
-- _divisor : int</y:AttributeLabel>
+- _divisor : int
+- _tamPrefixo : int
+- _tamSufixo : int
+- _valorSufixo : int</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
@@ -107,7 +110,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.0" width="170.0" x="500.5" y="369.0"/>
+          <y:Geometry height="133.0" width="170.0" x="424.99999999999994" y="287.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="93.60986328125" x="38.195068359375" y="3.0">EliasGamma<y:LabelModel>
@@ -129,34 +132,10 @@
     </node>
     <node id="n5">
       <data key="d4"/>
-      <data key="d6">
-        <y:UMLNoteNode>
-          <y:Geometry height="154.0" width="327.0" x="-2.0" y="-37.0"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="115.75" modelName="custom" textColor="#000000" visible="true" width="321.16796875" x="2.916015625" y="19.125">Aplicacao: Classe principal
-
-Codificador/Decodificador:
-- Buffer para conter os dados à processar;
-- Interface;
-
-Golomb:
-- Deve extender as classes Codicador/Decodificador;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-        </y:UMLNoteNode>
-      </data>
-    </node>
-    <node id="n6">
-      <data key="d4"/>
       <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="123.0" width="182.0" x="670.0" y="-14.0"/>
+          <y:Geometry height="123.0" width="182.0" x="564.5" y="-19.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="90.02978515625" x="45.985107421875" y="3.0">OpcaoMenu<y:LabelModel>
@@ -243,7 +222,7 @@ Golomb:
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n6" target="n0">
+    <edge id="e6" source="n5" target="n0">
       <data key="d8"/>
       <data key="d9"/>
       <data key="d10">
