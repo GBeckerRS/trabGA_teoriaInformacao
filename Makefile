@@ -1,5 +1,5 @@
 #=====================================================
-#Makfile padrão basico para projetos em C/C++
+#Makefile padrão basico para projetos em C/C++
 #
 #Flags:
 #	CC: Compilador utilizado
@@ -22,7 +22,7 @@ OBJ_DIR = obj
 BIN_DIR = bin
 EXT = cpp
 #=====================================================
-FONTES = src/main.cpp
+FONTES = src/main.cpp src/OpcaoMenu.cpp
 TEMP = $(subst $(SRC_DIR),$(OBJ_DIR),$(FONTES))	# Auxiliar
 OBJETOS = $(TEMP:.$(EXT)=.o)					# Arquivos Objeto
 #=====================================================
