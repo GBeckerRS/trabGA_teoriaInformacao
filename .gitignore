@@ -3,4 +3,5 @@ obj/*
 
 src/*.swp
 src/inc/*.swp
+src/test/*.swp
 
