@@ -2,6 +2,9 @@
 #define     SRC_INC_APLICACAO_H
 
 #include    <iostream>
+#include    <stdexcept>
+
+#include    "OpcaoMenu.h"
 
 class Aplicacao
 {
@@ -14,6 +17,7 @@ private:
     char _modoDeOperacao_atual;
     char _tipoCodificacao_atual;
     int _golombDivisor_atual;
+    OpcaoMenu* _opcaoMenu;
 
     int menu ();
 
