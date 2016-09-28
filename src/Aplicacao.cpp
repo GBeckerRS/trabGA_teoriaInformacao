@@ -14,31 +14,52 @@ Aplicacao::~Aplicacao ()
 
 int Aplicacao::menu ()
 {
-    int retorno = 0;
+    int estado = 0;
     try
     {
     do
     {
-        std::cout << "Digite o Modo de Operação (\'C\'odificador ou \'D\'ecodificador)" << std::endl;
-        char modoOperacao;
-        std::cin >> modoOperacao;
-        try
+        char modoOperacao, tipoCodificacao;
+        switch (estado)
         {
-            this->_opcaoMenu->set_ModoDeUso (modoOperacao);
-        }
-        catch (const std::invalid_argument& ex)
-        {
-            std::cout << "Erro: " << ex.what () << std::endl;
-            retorno = -1;
-        }
-    } while (retorno < 0);
+        case 0:
+            std::cout << "Digite o Modo de Operação (\'C\'odificador ou \'D\'ecodificador): ";
+            std::cin >> modoOperacao;
+            std::cout << std::endl;
+            try
+            {
+                this->_opcaoMenu->set_ModoDeUso (modoOperacao);
+                estado = 1;
+            }
+            catch (const std::invalid_argument& ex)
+            {
+                std::cout << "Erro: " << ex.what () << std::endl;
+            }
+        break;
+
+        case 1:
+            std::cout << "Digite o tipo de codificação (\'G\'olomb ou \'E\'lias-Gamma): ";
+            std::cin >> tipoCodificacao;
+            std::cout << std::endl;
+            try
+            {
+                this->_opcaoMenu->set_TipoCodificacao (tipoCodificacao);
+                estado = 2;
+            }
+            catch (const std::invalid_argument& ex)
+            {
+                std::cout << "Erro: " << ex.what () << std::endl;
+            }
+        break;
+        };
+    } while (estado < 2);
     }
     catch (const std::exception& ex)
     {
         std::cerr << "Ocorreu um erro não tratado no MENU: " << ex.what () << std::endl;
         std::terminate ();
     }
-    return retorno;
+    return 0;
 }
 
 int Aplicacao::meinKampf ()
