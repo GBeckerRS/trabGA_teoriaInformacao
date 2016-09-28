@@ -20,6 +20,7 @@ int Aplicacao::menu ()
     do
     {
         char modoOperacao, tipoCodificacao;
+        int divisorElias = 0;
         switch (estado)
         {
         case 0:
@@ -51,8 +52,30 @@ int Aplicacao::menu ()
                 std::cout << "Erro: " << ex.what () << std::endl;
             }
         break;
+
+        case 2:
+            if (tipoCodificacao == 'G')
+            {
+                std::cout << "Defina o valor do Divisor utilizado no Elias-Gamma: ";
+                std::cin >> divisorElias;
+                std::cout << std::endl;
+                try
+                {
+                    this->_opcaoMenu->set_DivisorEliasGamma (divisorElias);
+                    estado = 3;
+                }
+                catch (const std::invalid_argument& ex)
+                {
+                    std::cout << "Erro: " << ex.what () << std::endl;
+                }
+            }
+            else
+            {
+                estado = 3;
+            }
+        break;
         };
-    } while (estado < 2);
+    } while (estado < 3);
     }
     catch (const std::exception& ex)
     {
