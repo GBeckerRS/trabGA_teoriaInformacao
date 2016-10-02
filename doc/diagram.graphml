@@ -37,7 +37,8 @@
 - _tipoCodificacao_atual : int
 - _golombDivisor_atual : int</y:AttributeLabel>
             <y:MethodLabel>+ meinKampf (int argc, const char * argv[]) : int
-- menu () : int</y:MethodLabel>
+- menu () : int
+- opcoesMenu () : void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -137,7 +138,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="123.0" width="182.0" x="689.0" y="-151.5"/>
+          <y:Geometry height="123.0" width="182.0" x="689.0" y="-100.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="90.02978515625" x="45.985107421875" y="3.0">OpcaoMenu<y:LabelModel>
