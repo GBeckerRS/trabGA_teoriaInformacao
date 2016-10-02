@@ -3,6 +3,24 @@
 // Construtor
 OpcaoMenu::OpcaoMenu ()
 {
+    this->_tipoCodificacao = ' ';
+    this->_modoDeUso = ' ';
+    this->_divisorEliasGamma = 0;
+    this->_nomeArquivoEntrada = "";
+    this->_nomeArquivoSaida = "";
+}
+
+OpcaoMenu::OpcaoMenu (const char& t,
+                      const char& m,
+                      const int& d,
+                      const std::string& ne,
+                      const std::string& ns)
+{
+    this->_tipoCodificacao = t;
+    this->_modoDeUso = m;
+    this->_divisorEliasGamma = d;
+    this->_nomeArquivoEntrada = ne;
+    this->_nomeArquivoSaida = ns;
 }
 
 // Destrutor

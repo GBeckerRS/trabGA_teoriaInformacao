@@ -21,12 +21,13 @@ int Aplicacao::menu ()
     {
         char modoOperacao, tipoCodificacao;
         int divisorElias = 0;
+        std::string nomeArquivoEntrada, nomeArquivoSaida;
+
         switch (estado)
         {
         case 0:
             std::cout << "Digite o Modo de Operação (\'C\'odificador ou \'D\'ecodificador): ";
             std::cin >> modoOperacao;
-            std::cout << std::endl;
             try
             {
                 this->_opcaoMenu->set_ModoDeUso (modoOperacao);
@@ -41,7 +42,6 @@ int Aplicacao::menu ()
         case 1:
             std::cout << "Digite o tipo de codificação (\'G\'olomb ou \'E\'lias-Gamma): ";
             std::cin >> tipoCodificacao;
-            std::cout << std::endl;
             try
             {
                 this->_opcaoMenu->set_TipoCodificacao (tipoCodificacao);
@@ -54,11 +54,10 @@ int Aplicacao::menu ()
         break;
 
         case 2:
-            if (tipoCodificacao == 'G')
+            if (tipoCodificacao == 'G' || tipoCodificacao == 'g')
             {
-                std::cout << "Defina o valor do Divisor utilizado no Elias-Gamma: ";
+                std::cout << "Defina o valor do Divisor utilizado no Golomb: ";
                 std::cin >> divisorElias;
-                std::cout << std::endl;
                 try
                 {
                     this->_opcaoMenu->set_DivisorEliasGamma (divisorElias);
@@ -74,8 +73,37 @@ int Aplicacao::menu ()
                 estado = 3;
             }
         break;
+
+        case 3:
+            try
+            {
+                std::cout << "Escolha o arquivo de entrada: ";
+                std::cin.ignore ();
+                std::getline (std::cin, nomeArquivoEntrada);
+                this->_opcaoMenu->set_NomeArquivoEntrada (nomeArquivoEntrada);
+                estado = 4;
+            }
+            catch (const std::invalid_argument& ex)
+            {
+                std::cout << "Erro: " << ex.what () << std::endl;
+            }
+        break;
+        case 4:
+            try
+            {
+                std::cout << "Escolha o arquivo de saida: ";
+                std::cin.ignore ();
+                std::getline (std::cin, nomeArquivoSaida);
+                this->_opcaoMenu->set_NomeArquivoSaida (nomeArquivoSaida);
+                estado = 5;
+            }
+            catch (const std::invalid_argument& ex)
+            {
+                std::cout << "Erro: " << ex.what () << std::endl;
+            }
+        break;
         };
-    } while (estado < 3);
+    } while (estado < 5);
     }
     catch (const std::exception& ex)
     {
@@ -88,7 +116,64 @@ int Aplicacao::menu ()
 int Aplicacao::meinKampf ()
 {
     std::cout << "Beta teste MENU" << std::endl;
-    return this->menu ();
+    this->menu ();
+    this->parserMenu ();
+    return 0;
+}
+
+void Aplicacao::parserMenu ()
+{
+    char tipoCodificacao, modoDeUso;
+    int divisorG;
+    std::string entrada, saida;
+
+    tipoCodificacao = this->_opcaoMenu->get_TipoCodificacao ();
+    modoDeUso = this->_opcaoMenu->get_ModoDeUso ();
+    divisorG = this->_opcaoMenu->get_DivisorEliasGamma ();
+    entrada = this->_opcaoMenu->get_NomeArquivoEntrada ();
+    saida = this->_opcaoMenu->get_NomeArquivoSaida ();
+
+    if (tipoCodificacao != ' ')
+    {
+        this->set_tipoDeCodificacao_atual (tipoCodificacao);
+    }
+
+    if (modoDeUso != ' ')
+    {
+        this->set_modoDeOperacao_atual (modoDeUso);
+    }
+
+    if (divisorG > 0)
+    {
+        this->set_golombDivisor_atual (divisorG);
+    }
+
+    if (!entrada.empty ())
+    {
+        this->set_nomeArquivoEntrada (entrada);
+    }
+
+    if (!saida.empty ())
+    {
+        this->set_nomeArquivoSaida (saida);
+    }
+}
+
+std::string Aplicacao::imprimeOpcoes (bool imprime=false)
+{
+    std::stringstream ss;
+
+    ss << "Modo de operação = " << this->get_modoDeOperacao_atual () << std::endl;
+    ss << "Tipo de codificacao = " << this->get_tipoDeCodificacao_atual () << std::endl;
+    ss << "Divisor Golomb = " << this->get_golombDivisor_atual () << std::endl;
+    ss << "Arquivo Entrada = " << this->get_nomeArquivoEntrada () << std::endl;
+    ss << "Arquivo Saida = " << this->get_nomeArquivoSaida ();
+
+    if (imprime)
+    {
+        std::cout << ss.str () << std::endl;
+    }
+    return ss.str ();
 }
 
 // Gets and Sets

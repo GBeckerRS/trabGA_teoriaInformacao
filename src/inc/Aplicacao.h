@@ -3,6 +3,7 @@
 
 #include    <iostream>
 #include    <stdexcept>
+#include    <sstream>
 
 #include    "OpcaoMenu.h"
 
@@ -20,12 +21,14 @@ private:
     OpcaoMenu* _opcaoMenu;
 
     int menu ();
+    void parserMenu ();
 
 public:
     Aplicacao ();
     ~Aplicacao ();
 
     int meinKampf ();
+    std::string imprimeOpcoes (bool imprime);
 
     void set_nomeArquivoEntrada (const std::string& n);
     void set_nomeArquivoSaida (const std::string& n);

@@ -17,6 +17,8 @@ private:
 
 public:
     OpcaoMenu ();
+    OpcaoMenu (const char& t, const char& m, const int& d,
+               const std::string& ne, const std::string& ns);
     ~OpcaoMenu ();
 
     void set_TipoCodificacao (const char& t);
