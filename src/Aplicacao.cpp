@@ -4,12 +4,17 @@
 Aplicacao::Aplicacao ()
 {
     this->_opcaoMenu = new OpcaoMenu ();
+    this->_codec = 0;
 }
 
 // Destrutor
 Aplicacao::~Aplicacao ()
 {
     delete this->_opcaoMenu;
+    if (this->_codec)
+    {
+        delete this->_codec;
+    }
 }
 
 int Aplicacao::menu ()
@@ -116,8 +121,14 @@ int Aplicacao::menu ()
 int Aplicacao::meinKampf ()
 {
     std::cout << "Beta teste MENU" << std::endl;
-    this->menu ();
-    this->parserMenu ();
+    //this->menu ();
+    //this->parserMenu ();
+
+    // Debug
+    this->set_nomeArquivoEntrada ("misc/input.txt");
+    this->leEntrada ();
+    std::string d = this->_entrada.str ();
+
     return 0;
 }
 
@@ -176,6 +187,31 @@ std::string Aplicacao::imprimeOpcoes (bool imprime=false)
     return ss.str ();
 }
 
+void Aplicacao::leEntrada ()
+{
+    std::string fileName = this->get_nomeArquivoEntrada ();
+    try
+    {
+    std::ifstream file (fileName.c_str ());
+    if (file.is_open ())
+    {
+        this->_entrada << file.rdbuf ();
+        file.close ();
+        return;
+    }
+    // Dispara excessao de erro
+    }
+    catch (std::ifstream::failure& ex)
+    {
+        std::cout << "Erro: " << ex.what ();
+        // Disparar excessão
+    }
+}
+
+void Aplicacao::escreveSaida ()
+{
+}
+
 // Gets and Sets
 
 void Aplicacao::set_nomeArquivoEntrada (const std::string& n)
@@ -203,6 +239,16 @@ void Aplicacao::set_golombDivisor_atual (const int& d)
     this->_golombDivisor_atual = d;
 }
 
+void Aplicacao::set_bufferEntrada (std::string& dados)
+{
+    //this->_entrada << dados.c_str ();
+}
+
+void Aplicacao::set_bufferSaida (std::string& dados)
+{
+    //this->_saida << dados.c_str ();
+}
+
 std::string Aplicacao::get_nomeArquivoEntrada ()
 {
     return this->_arqEntrada;
@@ -226,5 +272,15 @@ char Aplicacao::get_tipoDeCodificacao_atual ()
 int Aplicacao::get_golombDivisor_atual ()
 {
     return this->_golombDivisor_atual;
+}
+
+std::string Aplicacao::get_bufferEntrada ()
+{
+    return this->_entrada.str ();
+}
+
+std::string Aplicacao::get_bufferSaida ()
+{
+    return this->_saida.str ();
 }
 

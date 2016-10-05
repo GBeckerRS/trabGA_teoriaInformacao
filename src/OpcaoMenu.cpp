@@ -43,7 +43,7 @@ void OpcaoMenu::set_ModoDeUso (const char& m)
     {
         throw std::invalid_argument ( "Modo de Uso invalido." );
     }
-    _modoDeUso = m;
+    this->_modoDeUso = m;
 }
 
 void OpcaoMenu::set_DivisorEliasGamma (const int& d)

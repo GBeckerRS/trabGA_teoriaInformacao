@@ -18,7 +18,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="236.0" width="309.0" x="235.5" y="-156.5"/>
+          <y:Geometry height="247.2" width="309.0" x="235.5" y="-156.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="69.7109375" x="119.64453125" y="3.0">Aplcacao<y:LabelModel>
@@ -35,10 +35,14 @@
 - _arqSaida : std::string
 - _modoDeOperacao_atual : char
 - _tipoCodificacao_atual : int
-- _golombDivisor_atual : int</y:AttributeLabel>
+- _golombDivisor_atual : int
+- _entrada : std::stringstream
+- _saida : std::stringstream</y:AttributeLabel>
             <y:MethodLabel>+ meinKampf (int argc, const char * argv[]) : int
 - menu () : int
-- opcoesMenu () : void</y:MethodLabel>
+- parserMenu () : void
+- leEntrada () : int
+- escreveSaida () : int</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -58,7 +62,8 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- _buffer : vector&lt;char&gt;
+            <y:AttributeLabel>- _input : vector&lt;char&gt;
+- _output : vector&lt;char&gt;
 - _divisor : int
 - _tamPrefixo : int
 - _tamSufixo : int
@@ -72,7 +77,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="133.0" width="170.0" x="424.99999999999994" y="287.0"/>
+          <y:Geometry height="152.0" width="170.0" x="424.99999999999994" y="287.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="93.60986328125" x="38.195068359375" y="3.0">EliasGamma<y:LabelModel>
@@ -83,11 +88,12 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- _buffer : vector&lt;char&gt;
+            <y:AttributeLabel>- _input : vector&lt;char&gt;
+- _output : vector&lt;char&gt;
 - _N : int
 - _resto : int
 - _tamCodeWord : int</y:AttributeLabel>
-            <y:MethodLabel>+ status : std::string</y:MethodLabel>
+            <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -122,10 +128,10 @@
       <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="93.0" width="189.0" x="295.5" y="136.75"/>
+          <y:Geometry height="112.0" width="225.0" x="277.5" y="136.75"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="48.30029296875" x="70.349853515625" y="3.0">Codec<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="48.30029296875" x="88.349853515625" y="3.0">Codec<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -134,8 +140,9 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
-            <y:MethodLabel>codificar () : virtual void
-decodificar () : virtual void</y:MethodLabel>
+            <y:MethodLabel>+ codificar () : virtual void
++ decodificar () : virtual void
++ status (bool) : virtual std::string</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
