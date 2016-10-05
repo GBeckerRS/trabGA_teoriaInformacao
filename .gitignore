@@ -1,5 +1,6 @@
 bin/*
 obj/*
+misc/*
 
 src/*.swp
 src/inc/*.swp
