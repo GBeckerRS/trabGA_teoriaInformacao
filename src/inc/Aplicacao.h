@@ -9,6 +9,7 @@
 #include    "OpcaoMenu.h"
 #include    "Golomb.h"
 #include    "Codec.h"
+#include    "Dicionario.h"
 
 class Aplicacao
 {

@@ -129,6 +129,11 @@ int Aplicacao::meinKampf ()
     this->leEntrada ();
     std::string d = this->_entrada.str ();
 
+    Dicionario dic ("teste pitica");
+    char carac = 'e';
+    int cod = dic.retornaCodigo (carac);
+    std::cout << "Codigo do caracter " << carac << "! = " << cod << std::endl;
+
     return 0;
 }
 
