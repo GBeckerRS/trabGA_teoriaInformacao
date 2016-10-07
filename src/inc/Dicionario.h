@@ -8,7 +8,7 @@ class Dicionario
 {
 public:
     Dicionario ();
-    Dicionario (const std::string& e);
+    Dicionario (const std::string& amostra);
     ~Dicionario ();
 
     void set_conjunto (const std::map<char,int>& c);
