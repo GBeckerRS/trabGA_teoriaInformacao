@@ -15,9 +15,11 @@ public:
     std::map<char,int> get_conjunto ();
 
     int retornaCodigo (const char& c);
+    void adicionaSimbolo (const char& s);
 
 private:
     std::map<char,int> _conjunto;
+    int _valor;
 
 };
 

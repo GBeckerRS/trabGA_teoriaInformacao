@@ -3,7 +3,8 @@
 // Construtor
 Dicionario::Dicionario ()
 {
-    this->_conjunto [' '] = 0;
+    this->_valor = 0;
+    this->adicionaSimbolo (' ');
     this->_conjunto ['!'] = 1;
     this->_conjunto ['\"'] = 2;
     this->_conjunto ['\''] = 3;
@@ -80,18 +81,14 @@ Dicionario::Dicionario ()
 // Construtor
 Dicionario::Dicionario (const std::string& amostra)
 {
+    this->_valor = 0;
     int tamanho = amostra.size ();
-    int encontrouChave = 0, valor = 0;
     char chave = ' ';
 
     for (int i = 0; i<tamanho; i++)
     {
         chave = amostra.at (i);
-        encontrouChave = this->_conjunto.count (chave);
-        if (encontrouChave == 0)
-        {
-            this->_conjunto [chave] = valor++;
-        }
+        this->adicionaSimbolo (chave);
     }
 }
 
@@ -104,6 +101,15 @@ int Dicionario::retornaCodigo (const char& c)
 {
     int codigo = this->_conjunto [c];
     return codigo;
+}
+
+void Dicionario::adicionaSimbolo (const char& s)
+{
+    int existeSimbolo = this->_conjunto.count (s);
+    if (existeSimbolo == 0)
+    {
+        this->_conjunto [s] = _valor++;
+    }
 }
 
 void Dicionario::set_conjunto (const std::map<char,int>& c)
