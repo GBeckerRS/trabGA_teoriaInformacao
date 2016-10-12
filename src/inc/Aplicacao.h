@@ -5,6 +5,7 @@
 #include    <stdexcept>
 #include    <sstream>
 #include    <fstream>
+#include    <vector>
 
 #include    "OpcaoMenu.h"
 #include    "Golomb.h"

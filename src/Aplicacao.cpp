@@ -129,11 +129,19 @@ int Aplicacao::meinKampf ()
     this->leEntrada ();
     std::string d = this->_entrada.str ();
 
-    Dicionario dic ("teste pitica");
-    char carac = 'e';
-    int cod = dic.retornaCodigo (carac);
-    std::cout << "Codigo do caracter " << carac << "! = " << cod << std::endl;
+    Dicionario* dic = new Dicionario ();
 
+/*
+    std::stringstream sss;
+    char cA = ' ';
+    std::vector <char> vec (32,0);
+    vec [0] = cA;
+    vec [0] = vec[0] >> 8;
+*/
+
+    Golomb go (dic,8);
+    go.set_input ("casa");
+    go.codificar ();
     return 0;
 }
 
