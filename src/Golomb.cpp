@@ -27,30 +27,20 @@ void Golomb::codificar ()
     this->calcula ();
     this->status (true);
 
+/*
     unsigned char dado = this->get_vSulfixo ();
     unsigned char stopBit = 1;
     stopBit = stopBit << this->get_tSulfixo ();
 
     dado = (dado | stopBit);
+*/
 
-    int qtShift = (this->get_tSulfixo () + 1) - this->get_bitWalker ();
-    this->set_bitWalker (qtShift);
-    dado = dado << qtShift;
-
-    // TODO: Necessario tratar situacao quando o tamanho do byte 
-    // estoura, sendo necessario escrever no proximo byte
-
-    // Até aqui, tenho dado + Stop bit no lugar certo
-
-    // Armazenar no lugar certo do buffer de saida 
-    // Considerando o shift a direira do tamanho do prefixo
-
-    return;
 }
 
 void Golomb::decodificar ()
 {
-    std::cout << "Decodificador Golomb" << std::endl;
+    unsigned short int resultado = 0;
+    resultado = (this->_tPrefixo * this->_divisor) + this->_vSulfixo;
 }
 
 std::string Golomb::status (bool imprime=false)
@@ -80,6 +70,16 @@ void Golomb::calcula ()
     this->_vSulfixo = codigo % this->_divisor;
 
     this->_input.pop_back ();
+}
+
+void Golomb::reset ()
+{
+    this->_tPrefixo = 0;
+    this->_tSulfixo = 0;
+    this->_vSulfixo = 0;
+    this->_divisor = 0;
+    this->_bitWalker = 0;
+    this->_byteWalker = 0;
 }
 
 void Golomb::set_input (const std::string& input)

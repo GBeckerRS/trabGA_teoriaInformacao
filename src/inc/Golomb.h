@@ -7,6 +7,7 @@
 #include    <vector>
 #include    <algorithm>
 #include    <cmath>
+#include    <cstring> // memcpy, memset
 
 #include    "Codec.h"
 #include    "Dicionario.h"
@@ -20,6 +21,7 @@ public:
     void codificar ();
     void decodificar ();
     std::string status (bool imprime);
+    void reset ();
 
     void set_input (const std::string& input);
     void set_output (const std::string& output);
