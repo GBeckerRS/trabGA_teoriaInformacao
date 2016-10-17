@@ -118,11 +118,11 @@ int Aplicacao::menu ()
     return 0;
 }
 
-int Aplicacao::meinKampf ()
+int Aplicacao::inicio ()
 {
     std::cout << "Beta teste MENU" << std::endl;
-    //this->menu ();
-    //this->parserMenu ();
+    this->menu ();
+    this->parserMenu ();
 
     // Debug
     this->set_nomeArquivoEntrada ("misc/input.txt");

@@ -37,7 +37,7 @@ public:
     Aplicacao ();
     ~Aplicacao ();
 
-    int meinKampf ();
+    int inicio ();
     std::string imprimeOpcoes (bool imprime);
 
     void set_nomeArquivoEntrada (const std::string& n);

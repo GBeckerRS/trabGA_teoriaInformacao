@@ -8,7 +8,7 @@ int main (int argc, const char * argv[])
     try
     {
         Aplicacao* app = new Aplicacao ();
-        retorno = app->meinKampf ();
+        retorno = app->inicio ();
         delete app;
     }
     catch (std::exception ex)
