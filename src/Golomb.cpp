@@ -41,6 +41,8 @@ void Golomb::decodificar ()
 {
     unsigned short int resultado = 0;
     resultado = (this->_tPrefixo * this->_divisor) + this->_vSulfixo;
+
+    std::cout << "Caracter decodificado: " << resultado << std::endl;
 }
 
 std::string Golomb::status (bool imprime=false)

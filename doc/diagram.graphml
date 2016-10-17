@@ -80,10 +80,10 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="206.46066350710896" width="170.0" x="424.99999999999994" y="294.8"/>
+          <y:Geometry height="206.46066350710896" width="215.26225592417063" x="424.9999999999999" y="294.8"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="93.60986328125" x="38.195068359375" y="3.0">EliasGamma<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" modelName="custom" textColor="#000000" visible="true" width="93.60986328125" x="60.826196321460316" y="3.0">EliasGamma<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -95,7 +95,9 @@
 - _output : vector&lt;char&gt;
 - _N : int
 - _resto : int
-- _tamCodeWord : int</y:AttributeLabel>
+- _tamCodeWord : int
+- _dicionario : Dicionario*
+- _simboloCodificado: short int</y:AttributeLabel>
             <y:MethodLabel/>
           </y:UML>
         </y:UMLClassNode>

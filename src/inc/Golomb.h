@@ -32,6 +32,7 @@ public:
     void set_dicionario (Dicionario* d);
     void set_bitWalker (int b);
     void set_byteWalker (int b);
+
     std::vector<char> get_input ();
     std::vector<char> get_output ();
     int get_tPrefixo ();

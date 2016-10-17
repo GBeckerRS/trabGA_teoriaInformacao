@@ -22,7 +22,7 @@ OBJ_DIR = obj
 BIN_DIR = bin
 EXT = cpp
 #=====================================================
-FONTES = src/Dicionario.cpp src/Golomb.cpp src/OpcaoMenu.cpp src/Aplicacao.cpp src/main.cpp
+FONTES = src/Dicionario.cpp src/Golomb.cpp src/EliasGamma.cpp src/OpcaoMenu.cpp src/Aplicacao.cpp src/main.cpp
 TEMP = $(subst $(SRC_DIR),$(OBJ_DIR),$(FONTES))	# Auxiliar
 OBJETOS = $(TEMP:.$(EXT)=.o)					# Arquivos Objeto
 #=====================================================
